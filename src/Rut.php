@@ -46,6 +46,8 @@ final readonly class Rut
      */
     public static function parse(string $rut): Rut
     {
+        // String to upper to avoid problem with k instead of K
+        $rut = strtoupper($rut);
         // Remove space, dots and hyphens
         $rut = \str_replace([' ', '.', '-'], '', $rut);
 
